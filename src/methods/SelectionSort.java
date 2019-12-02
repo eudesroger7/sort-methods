@@ -15,17 +15,16 @@ public class SelectionSort {
             smaller = index1;
 
             for (index2 = (index1 + 1); index2 < array.length; index2++) {
-                if(array[index2] < array[smaller]) {
+                if (array[index2] < array[smaller]) {
                     smaller = index2;
-                    this.count++;
                 }
+                this.count++;
             }
 
-            if(index1 != smaller) {
+            if (index1 != smaller) {
                 temp = array[index1];
                 array[index1] = array[smaller];
                 array[smaller] = temp;
-                this.count++;
             }
         }
 
