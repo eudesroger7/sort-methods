@@ -23,17 +23,19 @@ public class QuickSort {
         int index1 = first + 1, index2 = last;
 
         while (index1 <= index2) {
-            if (array[index1] <= pivot)
+            if (array[index1] <= pivot) {
                 index1++;
-            else if (pivot < array[index2])
+                this.count++;
+            } else if (pivot < array[index2]) {
                 index2--;
-            else {
+                this.count += 2;
+            } else {
                 int temp = array[index1];
                 array[index1] = array[index2];
                 array[index2] = temp;
                 index1++;
                 index2--;
-                this.count++;
+                this.count += 2;
             }
         }
 

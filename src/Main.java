@@ -4,6 +4,6 @@ public class Main {
     public static void main(String[] args) {
         Test test = new Test();
 //        test.testAllMethods(5, 50);
-        test.testSingleMethod("heap", 5, 50);
+        test.testSingleMethod("quick", 5, 50);
     }
 }
