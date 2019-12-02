@@ -13,12 +13,6 @@ public class Test {
         for (int i = 0; i < loopQuantity; i++) {
             int[] data = generateVector(arrayLength);
 
-            System.out.printf("array => %d \n", i + 1);
-            for (int j = 0; j < arrayLength; j++) {
-                System.out.printf(" %d", data[j]);
-            }
-            System.out.println("\n");
-
             iterationsBubble += methods.sort("bubble", data);
             iterationsSelection += methods.sort("selection", data);
             iterationsInsertion += methods.sort("insertion", data);

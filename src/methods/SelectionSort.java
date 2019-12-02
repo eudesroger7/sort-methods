@@ -17,7 +17,6 @@ public class SelectionSort {
             for (index2 = (index1 + 1); index2 < array.length; index2++) {
                 if(array[index2] < array[smaller]) {
                     smaller = index2;
-                    System.out.println("count increment");
                     this.count++;
                 }
             }
@@ -26,10 +25,8 @@ public class SelectionSort {
                 temp = array[index1];
                 array[index1] = array[smaller];
                 array[smaller] = temp;
-                System.out.println("count increment");
                 this.count++;
             }
-            System.out.println("count loop");
         }
 
 

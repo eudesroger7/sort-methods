@@ -12,12 +12,13 @@ public class InsertionSort {
 
         for (index1 = 1; index1 < array.length; index1++) {
             key = array[index1];
-            for (index2 = index1 - 1; (index2 >= 0) && (array[index2] > key); index2--) {
+
+            for (index2 = (index1 - 1); (index2 >= 0) && (array[index2] > key); index2--) {
                 array[index2 + 1] = array[index2];
                 this.count++;
             }
+
             array[index2 + 1] = key;
-            this.count++;
         }
 
         return this.count;
