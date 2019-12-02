@@ -13,6 +13,8 @@ public class Methods {
                 return quickSort(data);
             case "heap":
                 return heapSort(data);
+            case "merge":
+                return mergeSort(data);
         }
 
         return -1;
@@ -33,14 +35,18 @@ public class Methods {
         return insertionSort.sort(array);
     }
 
-    private int quickSort(int[] array) {
+    private static int quickSort(int[] array) {
         QuickSort quickSort = new QuickSort();
-        System.out.printf("quick sort => %d", quickSort.sort(array, 0, array.length - 1));
         return quickSort.sort(array, 0, array.length - 1);
     }
 
-    private int heapSort(int[] array) {
+    private static int heapSort(int[] array) {
         HeapSort heapSort = new HeapSort();
         return heapSort.sort(array);
+    }
+
+    private static int mergeSort(int[] array) {
+        MergeSort mergeSort = new MergeSort();
+        return mergeSort.sort(array, 0, array.length - 1);
     }
 }

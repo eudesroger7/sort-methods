@@ -8,22 +8,30 @@ public class SelectionSort {
     }
 
     public int sort(int[] array) {
-        for (int index1 = 0; index1 < array.length - 1; index1++) {
-            int smaller = index1;
 
-            for (int index2 = smaller + 1; index2 < array.length; index2++) {
-                if (array[index2] < array[smaller]) {
+        int index1, index2, smaller, temp;
+
+        for (index1 = 0; index1 < (array.length - 1); index1++) {
+            smaller = index1;
+
+            for (index2 = (index1 + 1); index2 < array.length; index2++) {
+                if(array[index2] < array[smaller]) {
                     smaller = index2;
+                    System.out.println("count increment");
+                    this.count++;
                 }
             }
 
-            if (smaller != index1) {
-                int temp = array[index1];
+            if(index1 != smaller) {
+                temp = array[index1];
                 array[index1] = array[smaller];
                 array[smaller] = temp;
+                System.out.println("count increment");
                 this.count++;
             }
+            System.out.println("count loop");
         }
+
 
         return this.count;
     }

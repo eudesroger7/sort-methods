@@ -8,24 +8,35 @@ public class Test {
         float iterationsInsertion = 0;
         float iterationsQuick = 0;
         float iterationsHeap = 0;
+        float iterationsMerge = 0;
 
         for (int i = 0; i < loopQuantity; i++) {
-            iterationsBubble += methods.sort("bubble", createData(arrayLength));
-            iterationsSelection += methods.sort("selection", createData(arrayLength));
-            iterationsInsertion += methods.sort("insertion", createData(arrayLength));
-            iterationsQuick += methods.sort("quick", createData(arrayLength));
-            iterationsHeap += methods.sort("heap", createData(arrayLength));
+            int[] data = generateVector(arrayLength);
+
+            System.out.printf("array => %d \n", i + 1);
+            for (int j = 0; j < arrayLength; j++) {
+                System.out.printf(" %d", data[j]);
+            }
+            System.out.println("\n");
+
+            iterationsBubble += methods.sort("bubble", data);
+            iterationsSelection += methods.sort("selection", data);
+            iterationsInsertion += methods.sort("insertion", data);
+            iterationsQuick += methods.sort("quick", data);
+            iterationsHeap += methods.sort("heap", data);
+            iterationsMerge += methods.sort("merge", data);
         }
 
         System.out.println("=============== Resultado ===============");
         System.out.printf("Quantidade de vetores testados: %d\n", loopQuantity);
         System.out.printf("Tamanho do vetor: %d\n", arrayLength);
         System.out.printf("Média de iterações:\n");
-        System.out.printf("> Bubble Sort: %.1f\n", iterationsBubble / loopQuantity);
-        System.out.printf("> Selection Sort: %.1f\n", iterationsSelection / loopQuantity);
-        System.out.printf("> Insertion Sort: %.1f\n", iterationsInsertion / loopQuantity);
-        System.out.printf("> Quick Sort: %.1f\n", iterationsQuick / loopQuantity);
-        System.out.printf("> Heap Sort: %.1f\n", iterationsHeap / loopQuantity);
+        System.out.printf("=> Bubble Sort: %.1f\n", iterationsBubble / loopQuantity);
+        System.out.printf("=> Selection Sort: %.1f\n", iterationsSelection / loopQuantity);
+        System.out.printf("=> Insertion Sort: %.1f\n", iterationsInsertion / loopQuantity);
+        System.out.printf("=> Quick Sort: %.1f\n", iterationsQuick / loopQuantity);
+        System.out.printf("=> Heap Sort: %.1f\n", iterationsHeap / loopQuantity);
+        System.out.printf("=> Merge Sort: %.1f\n", iterationsMerge / loopQuantity);
         System.out.println("=========================================\n");
     }
 
@@ -34,7 +45,7 @@ public class Test {
         float iterations = 0;
 
         for (int i = 0; i < loopQuantity; i++) {
-            iterations += methods.sort(method, createData(arrayLength));
+            iterations += methods.sort(method, generateVector(arrayLength));
         }
 
         System.out.println("=============== Resultado ===============");
@@ -45,14 +56,15 @@ public class Test {
         System.out.println("=========================================\n");
     }
 
-    private static int[] createData(int length) {
-        int[] data = new int[length];
-        Random rand = new Random();
+    private static int[] generateVector(int length) {
+        int[] vector = new int[length];
+        int maxNumber = 100000;
+        Random random = new Random();
 
         for (int i = 0; i < length; i++) {
-            data[i] = rand.nextInt(length);
+            vector[i] = random.nextInt(maxNumber);
         }
 
-        return data;
+        return vector;
     }
 }

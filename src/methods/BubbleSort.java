@@ -13,15 +13,16 @@ public class BubbleSort {
         while (changed) {
             changed = false;
 
-            for (int i = 0; i < array.length - 1; i++) {
+            for (int i = 0; i < (array.length - 1); i++) {
                 if (array[i] > array[i + 1]) {
                     int temp = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = temp;
                     changed = true;
-                    this.count++;
                 }
             }
+
+            this.count += (array.length - 1);
         }
 
         return this.count;
