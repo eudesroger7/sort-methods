@@ -38,7 +38,7 @@ public class MergeSort {
         int index4 = begin;
 
         while (index2 < left && index3 < right) {
-            this.count++;
+
             if (LeftArray[index2] <= RightArray[index3]) {
                 array[index4] = LeftArray[index2];
                 index2++;
@@ -46,17 +46,17 @@ public class MergeSort {
                 array[index4] = RightArray[index3];
                 index3++;
             }
+
             index4++;
+            this.count++;
         }
         while (index2 < left) {
-            this.count++;
             array[index4] = LeftArray[index2];
             index2++;
             index4++;
         }
 
         while (index3 < right) {
-            this.count++;
             array[index4] = RightArray[index3];
             index3++;
             index4++;
