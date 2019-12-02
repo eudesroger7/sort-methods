@@ -26,17 +26,21 @@ public class HeapSort {
     }
 
     private void heapify(int array[], int arrayLength, int rootElementIndex) {
-        this.count++;
+
         int leftIndex = 2 * rootElementIndex + 1;
         int rightIndex = 2 * rootElementIndex + 2;
 
         int largest = rootElementIndex;
 
-        if (leftIndex < arrayLength && array[leftIndex] > array[largest])
+        if (leftIndex < arrayLength && array[leftIndex] > array[largest]) {
             largest = leftIndex;
+        }
+        this.count++;
 
-        if (rightIndex < arrayLength && array[rightIndex] > array[largest])
+        if (rightIndex < arrayLength && array[rightIndex] > array[largest]) {
             largest = rightIndex;
+        }
+        this.count++;
 
         if (largest != rootElementIndex) {
 
