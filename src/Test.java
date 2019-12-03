@@ -13,12 +13,17 @@ public class Test {
         for (int i = 0; i < loopQuantity; i++) {
             int[] data = generateVector(arrayLength);
 
-            iterationsBubble += methods.sort("bubble", data);
-            iterationsSelection += methods.sort("selection", data);
-            iterationsInsertion += methods.sort("insertion", data);
-            iterationsQuick += methods.sort("quick", data);
-            iterationsHeap += methods.sort("heap", data);
-            iterationsMerge += methods.sort("merge", data);
+            iterationsBubble += methods.sort("bubble", data.clone());
+
+            iterationsSelection += methods.sort("selection", data.clone());
+
+            iterationsInsertion += methods.sort("insertion", data.clone());
+
+            iterationsQuick += methods.sort("quick", data.clone());
+
+            iterationsHeap += methods.sort("heap", data.clone());
+
+            iterationsMerge += methods.sort("merge", data.clone());
         }
 
         System.out.println("=============== Resultado ===============");
